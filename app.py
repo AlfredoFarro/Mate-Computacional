@@ -30,7 +30,6 @@ def handle_encrypt():
     
 
     if not F.isPrime(p_value) or not F.isPrime(q_value) or p_value*q_value < 26:
-        #print("WRONG")
         return flask.render_template('index.html')
 
     eul = F.euler(p_value,q_value)
@@ -41,17 +40,15 @@ def handle_encrypt():
 
 
     n = p_value * q_value
-    e = F.finde(d_value, eul)
+    e = F.finde(int(d_value), eul)
 
     key_public = [n, e]
     key_private = [n, d_value]
 
-    #print(f"Public: {key_public}")
-    #print(f"Private: {key_private}")
 
     arr_word1=[x for x in F.process(text_value, key_public).split()]##08 02 01 46 arrqord[08,02,01,46]
     out_text = ' '.join(arr_word1)
-    #print(f"Encriptado: {out_text}")
+    
 
 
     f = open('.cache/latest_file_out.txt', 'w')
@@ -72,15 +69,14 @@ def read_and_decrypt(c1, c2):
 def handle_decrypt():
     if request.method == 'POST':
         # check if the post request has the file part
-        #print(f"FILES: '{request.files}'")
+        
         if 'filename' not in request.files:
             flash('No file part')
             return redirect(request.url)
         file = request.files['filename']
         
         
-        #print('GAAAAAAAAAAAAAAAAAAAAA')
-        #print(flask.request.form)
+        
         c1 = flask.request.form['C1']
         c2 = flask.request.form['C2']
         #print(c1)
@@ -93,7 +89,16 @@ def handle_decrypt():
         if file:
             filename = secure_filename(file.filename)
             file.save(os.path.join(APP.config['UPLOAD_FOLDER'], 'latest_file_in.txt'))
-            return f'<h2>{read_and_decrypt(c1, c2)}</h2>'
+            return f'''
+           <body style="background-color:#F4F1BB;">
+            </body><tagname style="property:value;">
+            <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+            
+            <h2 style= "font-family:'Caveat';
+            text-align:center;
+            padding:400px;
+            font-size:300%;">
+            {read_and_decrypt(c1, c2)}</h2>''' 
             
 
             
