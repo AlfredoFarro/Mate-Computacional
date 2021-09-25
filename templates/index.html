@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset="utf-8" />
+  <title>Matematica Computacional</title>
+  <link type="text/css" rel="stylesheet"
+        href="{{ url_for('static',
+              filename='styles.css')}}" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="header">
+    <img src="../static/img/upc.png" alt="logo_upc">
+    <h1>Proyecto Computacional</h1>
+  </nav>
+
+  <div class="content">
+
+    <section class="encriptar">
+      <input class= "button" id="encriptar" type="button" value="Encriptar">
+      
+      <!-- <form class="encriptar__content form" action="{{ url_for('handle_encrypt') }}" method="post">
+        <label for="p_value">Valor de P:</label><br>
+        <input type="number" id="P" name="p_value" min="0"><br>
+        <label for="q_value">Valor de Q:</label><br>
+        <input type="number" id="Q" name="q_value" min="0"> <br> <br>
+        <input type="submit" value="Submit">
+        <input type="checkbox">
+        <label for="Download file">Descargar archivo</label><br>
+        
+      </form> -->
+      
+    </section>
+    
+    <section class="desencriptar"> 
+      <input class= "button" id="desencriptar" type="button" value="Desencriptar">
+      
+      <!-- <form class="desencriptar__content form"> 
+        <label for="key">Clave privada: </label>
+        <input type="number" id="c1" name="C1" min="0">
+        <input type="number" id="c2" name="C2" min="0"> <br> <br>
+        
+        <input type="file" id="archivo" name="filename">  <br> <br>
+        <input type="submit" value="Submit">
+      </form> -->
+    </section>
+  </div>
+    
+    <footer>
+      <a >Jhonny Edward Perez Armijo</a>
+    </footer>
+    <script src="{{ url_for('static', filename='main.js')}}"></script>
+  </body>
+  </html>
+  

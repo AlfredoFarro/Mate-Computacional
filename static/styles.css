@@ -1,0 +1,95 @@
+:root{
+    --primario: #FF637D;
+    --secundario: #F4F1BB;
+    --tercero: #66D7D1;
+    --cuarto: #EAF2E3;
+    --quinto: #FFF87F;
+}
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: 'Caveat', cursive;
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+body{
+    background-color: var(--secundario);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid gray;
+    margin-bottom: 4rem;
+}
+h1{
+    font-size: 5rem;
+}
+label{
+    font-size: 3rem;
+}
+.content{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 15rem 0;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.visible{
+    display: block;
+}
+
+
+.button{
+    
+    border-radius: 5rem;
+    border: 0;
+    box-shadow: 30px 15px 30px rgba(0, 0, 0, 0.3);
+    padding: 4rem 8rem;
+    font-size: 3rem;
+    transition: ease .5s;
+    background-color: white;
+
+}
+.button:hover{
+    font-size: 3.2rem;
+    background-color: lavender;
+}
+.form{
+    padding: 3rem;
+    border-radius: 10px;
+    background-color: wheat;
+    display: block;
+    max-width: 50%;
+    margin: 5rem auto;
+}
+.btn-cerrar{
+    margin-left: 2rem;
+    margin-top: 5rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.3);
+
+}
+.overlay{
+    position: fixed;
+    background-color: rgba(0,0,0,.5);
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+footer {
+    border-top: 1px solid gray;
+    text-align: center;
+    font-size: 150%;
+    width: 100%;
+}
